@@ -296,6 +296,49 @@ public class KegiatanActivity extends AppCompatActivity implements View.OnClickL
 
         //Fungsi menyimpan data kegiatan
         private void simpanKegiatan () {
+            
+            String tgl = etTgl.getText().toString().trim();
+            String waktu_mulai = etStart.getText().toString().trim();
+            String waktu_selesai = etStop.getText().toString().trim();
+            String status = txtSpinStatus;
+            String id_job = spinnerJob.getSelectedItem().toString();
+            String project_number = spinnerProject.getSelectedItem().toString();
+            String id_karyawan = etId.getText().toString().trim();
+
+
+            if (waktu_mulai.isEmpty()) {
+                etStart.setError("Isi waktu mulai");
+                etStart.requestFocus();
+                return;
+            }
+            if (waktu_selesai.isEmpty()) {
+                etStop.setError("Isi waktu berhenti");
+                etStop.requestFocus();
+                return;
+            }
+
+
+            Call<DefaultResponse> call = RetrofitClient
+                    .getInstance()
+                    .getApi()
+                    .tambahKegiatan(tgl, waktu_mulai, waktu_selesai, status, id_job, project_number, id_karyawan);
+
+            call.enqueue(new Callback<DefaultResponse>() {
+                @Override
+                public void onResponse(Call<DefaultResponse> call, Response<DefaultResponse> response) {
+                    if (response.code() == 501) {
+                        Toast.makeText(KegiatanActivity.this, "Kegiatan Tersimpan", Toast.LENGTH_LONG).show();
+                    } else if (response.code() == 422) {
+                        Toast.makeText(KegiatanActivity.this, "Kesalahan Menyimpan Data Kegiatan", Toast.LENGTH_LONG);
+                    }
+
+                }
+
+                @Override
+                public void onFailure(Call<DefaultResponse> call, Throwable t) {
+
+                }
+            });
 
 
         }
