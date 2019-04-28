@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">PPES</string>
+    <string name="ppes">Project Performance Evaluation System</string>
+    <string name="masuk">Masuk</string>
+    <string name="nik">NIK</string>
+    <string name="lupapassword">Lupa Password?</string>
+    <string name="daftar">Daftar Akun</string>
+    <string name="nama_karyawan">Nama</string>
+    <string name="level">Level</string>
+    <string name="gender">Jenis Kelamin</string>
+    <string name="daftar1">Daftar</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="kegiatan">Tambah Kegiatan</string>
+    <string name="keluar">Keluar</string>
+    <string name="selamatdatang">Selamat Datang</string>
+    <string name="tanggal">Tanggal</string>
+    <string name="pekerjaan">Pekerjaan</string>
+    <string name="project">Project</string>
+    <string name="start">Waktu Mulai</string>
+    <string name="stop">Waktu Berhenti</string>
+    <string name="status">Status</string>
+    <string name="kegiatan2">Simpan Kegiatan</string>
+    <string name="id">ID</string>
+    <string name="nothing_selected">onNothingSelected</string>
+    <string name="appversion">App Version 1.0</string>
+
+    <string-array name="status">
+        <item>Belum Selesai</item>
+        <item>Selesai</item>
+    </string-array>
+
+</resources>
